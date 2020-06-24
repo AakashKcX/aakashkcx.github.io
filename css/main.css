@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Roboto:wght@300;400&display=swap");
+
+:root {
+  --base: #282c34;
+  --mono-1: #abb2bf;
+  --mono-2: #818896;
+  --mono-3: #5c6370;
+  --cyan: #56b6c2;
+  --blue: #61aeee;
+  --purple: #c678dd;
+  --green: #98c379;
+  --red1: #e06c75;
+  --red2: #be5046;
+  --orange1: #d19a66;
+  --orange2: #e6c07b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,14 +22,16 @@
 }
 
 body {
+  background-color: var(--base);
+  color: var(--mono-1);
   font-family: "Roboto", sans-serif;
-  font-size: 16;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin: 0.5rem 0;
 }
 
 h1,
@@ -21,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.6;
@@ -30,7 +49,6 @@ h6 {
 h1 {
   font-size: 4rem;
 }
-
 h2 {
   font-size: 3.5rem;
 }
@@ -45,9 +63,6 @@ h5 {
 }
 h6 {
   font-size: 1.5rem;
-}
-
-section p {
 }
 
 .container {
@@ -68,19 +83,30 @@ section p {
   align-items: center;
   text-align: center;
   color: white;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.75);
 }
 
 #landing h1 {
   font-size: 7rem;
-  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+#landing h1::after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  display: block;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.75);
 }
 
 #landing p {
   font-size: 2rem;
-  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  font-weight: 300;
 }
 
-@media only screen and (max-width: 700px) {
+@media (max-width: 700px) {
   #landing h1 {
     font-size: 6rem;
   }
@@ -89,11 +115,13 @@ section p {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   #landing h1 {
     font-size: 5rem;
     line-height: 1;
-    margin-bottom: 2rem;
+  }
+  #landing h1::after {
+    margin-top: 1rem;
   }
   #landing p {
     font-size: 1.5rem;
@@ -105,20 +133,30 @@ section {
 }
 
 #section1 {
-  background-color: lightgrey;
+  background: var(--mono-1);
+  color: var(--base);
   font-size: 1.25rem;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
+  padding-bottom: 200px;
 }
 
 #section2 {
-  background-color: darkslategray;
-  color: white;
+  background: var(--base);
+  color: var(--mono-1);
+}
+
+#section3 {
+  background-color: var(--mono-1);
+  color: var(--base);
 }
 
 #footer {
   padding: 25px 0;
+  background: var(--base);
+  color: var(--mono-1);
 }
 
-#footer-inner {
+#footer .container {
   display: flex;
   justify-content: space-between;
 }
