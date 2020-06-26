@@ -185,6 +185,12 @@ section {
   padding-bottom: 200px;
 }
 
+@media (max-width: 500px) {
+  #section1 {
+    padding-bottom: 250px;
+  }
+}
+
 #section2 {
   background: var(--base);
   color: var(--mono-1);
