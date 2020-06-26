@@ -88,14 +88,28 @@ h6 {
 #landing h1 {
   font-size: 7rem;
   font-weight: 400;
+  margin-bottom: 0;
+}
+
+#landing h1::after {
+  content: "|";
+  vertical-align: 0.5rem;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
 }
 
 #landing hr {
   width: 100%;
   height: 5px;
-  display: block;
-  margin-top: -1rem;
-  margin-bottom: 1rem;
   background: white;
   border: none;
   border-radius: 5px;
@@ -105,6 +119,7 @@ h6 {
 #landing p {
   font-size: 2rem;
   font-weight: 300;
+  margin-top: 1rem;
 }
 
 @media (max-width: 700px) {
@@ -120,9 +135,7 @@ h6 {
   #landing h1 {
     font-size: 5rem;
     line-height: 1;
-  }
-  #landing h1::after {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   #landing p {
     font-size: 1.5rem;
