@@ -92,50 +92,13 @@ h6 {
 }
 
 #landing h1:hover {
-  animation: cycle 1s infinite alternate linear;
+  animation: cycle 5s infinite alternate linear;
 }
 
 #landing h1::after {
   content: "|";
   vertical-align: 0.5rem;
   animation: blink 1s step-end infinite;
-}
-
-@keyframes cycle {
-  0% {
-    color: var(--red1);
-  }
-  12.5% {
-    color: var(--red2);
-  }
-  25% {
-    color: var(--orange1);
-  }
-  37.5% {
-    color: var(--orange2);
-  }
-  50% {
-    color: var(--green);
-  }
-  75% {
-    color: var(--cyan);
-  }
-  87.5% {
-    color: var(--blue);
-  }
-  100% {
-    color: var(--purple);
-  }
-}
-
-@keyframes blink {
-  from,
-  to {
-    opacity: 100%;
-  }
-  50% {
-    opacity: 0%;
-  }
 }
 
 #landing hr {
@@ -210,4 +173,44 @@ section {
 #footer .container {
   display: flex;
   justify-content: space-between;
+}
+
+@keyframes cycle {
+  0% {
+    color: white;
+  }
+  12.5% {
+    color: var(--red1);
+  }
+  25% {
+    color: var(--red2);
+  }
+  37.5% {
+    color: var(--orange1);
+  }
+  50% {
+    color: var(--orange2);
+  }
+  62.5% {
+    color: var(--green);
+  }
+  75% {
+    color: var(--cyan);
+  }
+  87.5% {
+    color: var(--blue);
+  }
+  100% {
+    color: var(--purple);
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
 }
