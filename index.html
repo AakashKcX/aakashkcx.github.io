@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aakash Kc</title>
     <link href="./css/main.css" rel="stylesheet" />
+    <script defer src="./js/main.js"></script>
   </head>
 
   <body>
@@ -38,45 +39,47 @@
     <section id="section2">
       <div class="container">
         <h3>Projects</h3>
-        <article>
-          <h5>eight-ball</h5>
-          <p>
-            A multiplayer 8 ball pool game made in Node.js using Express.js and
-            WebSockets.
-          </p>
-          <ul>
-            <li>Real-time web socket communication using Socket.IO</li>
-            <li>
-              Authentication: sessions, cookies, database storage, accounts,
-              password hashing
-            </li>
-            <li>
-              Game physics: two-dimensional elastic collisions, vector
-              calculations.
-            </li>
-          </ul>
-        </article>
-        <article>
-          <h5>twitter-clone</h5>
-          <p>
-            A full stack twitter clone consisting of an Express REST API server
-            with JSON Web Tokens and a React front end client.
-          </p>
-          <ul>
-            <li>
-              REST API that transfers data through HTTP requests between the
-              server and client
-            </li>
-            <li>
-              Authentication: JSON web tokens, database storage, accounts,
-              password hashing
-            </li>
-            <li>
-              React.js front end user interface that fetches data from the
-              server
-            </li>
-          </ul>
-        </article>
+        <div id="projects">
+          <article>
+            <h5>eight-ball</h5>
+            <p>
+              A multiplayer 8 ball pool game made in Node.js using Express.js
+              and WebSockets.
+            </p>
+            <ul>
+              <li>Real-time web socket communication using Socket.IO</li>
+              <li>
+                Authentication: sessions, cookies, database storage, accounts,
+                password hashing
+              </li>
+              <li>
+                Game physics: two-dimensional elastic collisions, vector
+                calculations.
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h5>twitter-clone</h5>
+            <p>
+              A full stack twitter clone consisting of an Express REST API
+              server with JSON Web Tokens and a React front end client.
+            </p>
+            <ul>
+              <li>
+                REST API that transfers data through HTTP requests between the
+                server and client
+              </li>
+              <li>
+                Authentication: JSON web tokens, database storage, accounts,
+                password hashing
+              </li>
+              <li>
+                React.js front end user interface that fetches data from the
+                server
+              </li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
     <section id="section3">
@@ -101,6 +104,5 @@
         <span>aakashkc.kc@gmail.com</span>
       </div>
     </footer>
-    <script src="./js/main.js"></script>
   </body>
 </html>

@@ -88,6 +88,7 @@ h6 {
 #landing h1 {
   font-size: 7rem;
   font-weight: 400;
+  letter-spacing: -0.25rem;
   margin-bottom: 0;
 }
 
@@ -157,6 +158,30 @@ section {
 #section2 {
   background: var(--base);
   color: var(--mono-1);
+}
+
+#section2 #projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+@media (max-width: 750px) {
+  #section2 #projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+#section2 #projects article {
+  padding: 30px;
+  background: var(--mono-1);
+  color: var(--base);
+  cursor: pointer;
+}
+
+#section2 #projects article:hover {
+  background: var(--mono-2);
+  transition: background 0.25s ease;
 }
 
 #section3 {
