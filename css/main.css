@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@400;600&display=swap");
 
 :root {
   font-family: "Roboto", sans-serif;
@@ -29,6 +29,13 @@ body {
   color: var(--mono-1);
 }
 
+.container {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
 p {
   margin: 0.5rem 0;
 }
@@ -41,7 +48,7 @@ h5,
 h6 {
   margin: 1rem 0;
   font-family: "Montserrat", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.6;
 }
 
@@ -64,11 +71,86 @@ h6 {
   font-size: 1.5rem;
 }
 
-.container {
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 0 25px;
+a {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+.button {
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  border: solid 2px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+button:hover,
+.button:hover {
+  transform: scale(0.95);
+}
+
+button:active,
+.button:active {
+  transform: scale(0.9);
+}
+
+button.light,
+.button.light {
+  color: var(--base);
+  border-color: var(--base);
+}
+
+button.dark,
+.button.dark {
+  color: var(--mono-1);
+  border-color: var(--mono-1);
+}
+
+button.dark:hover,
+.button.dark:hover {
+  color: white;
+  border-color: white;
+}
+
+button.red:hover,
+.button.red:hover {
+  background: var(--red1);
+}
+button.orange:hover,
+.button.orange:hover {
+  background: var(--orange1);
+}
+button.yellow:hover,
+.button.yellow:hover {
+  background: var(--orange2);
+}
+button.blue:hover,
+.button.blue:hover {
+  background: var(--blue);
+}
+button.cyan:hover,
+.button.cyan:hover {
+  background: var(--cyan);
+}
+button.purple:hover,
+.button.purple:hover {
+  background: var(--purple);
+}
+button.green:hover,
+.button.green:hover {
+  background: var(--green);
 }
 
 #landing {
@@ -82,7 +164,7 @@ h6 {
   align-items: center;
   text-align: center;
   color: white;
-  text-shadow: 0 0 20px black;
+  text-shadow: 0 0 1.75rem black;
 }
 
 #landing h1 {
@@ -104,11 +186,11 @@ h6 {
 
 #landing hr {
   width: 100%;
-  height: 5px;
+  height: 0.4rem;
   background: white;
   border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 20px black;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 1.75rem black;
 }
 
 #landing p {
@@ -177,11 +259,34 @@ section {
   background: var(--mono-1);
   color: var(--base);
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 #section2 #projects article:hover {
   background: var(--mono-2);
-  transition: background 0.25s ease;
+  transform: scale(0.99);
+}
+
+#section2 #projects article.red:hover {
+  background: var(--red1);
+}
+#section2 #projects article.orange:hover {
+  background: var(--orange1);
+}
+#section2 #projects article.yellow:hover {
+  background: var(--orange2);
+}
+#section2 #projects article.blue:hover {
+  background: var(--blue);
+}
+#section2 #projects article.cyan:hover {
+  background: var(--cyan);
+}
+#section2 #projects article.purple:hover {
+  background: var(--purple);
+}
+#section2 #projects article.green:hover {
+  background: var(--green);
 }
 
 #section3 {
@@ -198,6 +303,10 @@ section {
 #footer .container {
   display: flex;
   justify-content: space-between;
+}
+
+#footer a {
+  color: inherit;
 }
 
 @keyframes cycle {
