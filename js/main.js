@@ -12,3 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })();
 });
+
+document.getElementById("scroll").onclick = function () {
+  for (const element of document.body.children) {
+    if (element.offsetTop > window.scrollY) {
+      element.scrollIntoView();
+      break;
+    }
+  }
+};

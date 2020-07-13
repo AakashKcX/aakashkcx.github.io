@@ -24,6 +24,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--base);
   color: var(--mono-1);
@@ -98,12 +102,12 @@ button,
 
 button:hover,
 .button:hover {
-  transform: scale(0.95);
+  transform: scale(0.975);
 }
 
 button:active,
 .button:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 button.light,
@@ -175,13 +179,13 @@ button.green:hover,
 }
 
 #landing h1:hover {
-  animation: cycle 5s infinite alternate linear;
+  animation: title-cycle 5s infinite alternate linear;
 }
 
 #landing h1::after {
   content: "|";
   vertical-align: 0.5rem;
-  animation: blink 1s step-end infinite;
+  animation: caret-blink 1s step-end infinite;
 }
 
 #landing hr {
@@ -259,7 +263,7 @@ section {
   background: var(--mono-1);
   color: var(--base);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s ease-in-out;
 }
 
 #section2 #projects article:hover {
@@ -309,7 +313,43 @@ section {
   color: inherit;
 }
 
-@keyframes cycle {
+#scroll {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  margin: 1rem;
+  color: var(--mono-1);
+  mix-blend-mode: difference;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  animation: scroll-color 1.5s infinite both ease-in-out;
+}
+
+#scroll:hover {
+  transform: scale(0.95);
+}
+
+.arrow {
+  display: inline-block;
+  padding: 0.75rem;
+  border: solid;
+  border-width: 0 0.75rem 0.75rem 0;
+}
+
+.arrow.right {
+  transform: rotate(-45deg);
+}
+.arrow.left {
+  transform: rotate(135deg);
+}
+.arrow.up {
+  transform: rotate(-135deg);
+}
+.arrow.down {
+  transform: rotate(45deg);
+}
+
+@keyframes title-cycle {
   0% {
     color: white;
   }
@@ -339,12 +379,22 @@ section {
   }
 }
 
-@keyframes blink {
+@keyframes caret-blink {
   from,
   to {
     opacity: 100%;
   }
   50% {
     opacity: 0%;
+  }
+}
+
+@keyframes scroll-color {
+  0%,
+  100% {
+    color: var(--mono-1);
+  }
+  50% {
+    color: var(--mono-2);
   }
 }
