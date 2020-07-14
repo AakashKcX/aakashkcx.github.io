@@ -20,10 +20,16 @@ function typewriter(querySelector, interval) {
 }
 
 function scroll(down) {
+  var OFFSET = 100;
   return function () {
     var elements = document.querySelectorAll("header, section");
     for (var element of down ? elements : Array.from(elements).reverse()) {
-      if (down ? element.offsetTop > scrollY : element.offsetTop < scrollY) {
+      if (
+        down
+          ? element.offsetTop > scrollY + OFFSET
+          : element.offsetTop < scrollY - OFFSET
+      ) {
+        console.log(element);
         element.scrollIntoView();
         break;
       }
