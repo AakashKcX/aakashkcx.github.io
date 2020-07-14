@@ -1,23 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var element = document.querySelector("#landing h1");
-  var text = element.innerHTML;
-  element.innerHTML = "&nbsp;";
+// window.addEventListener("DOMContentLoaded", typewriter("#landing h1", 250));
+document.onload = window.onload = typewriter("#landing h1", 250);
 
-  var i = 0;
-  (function type() {
-    if (i <= text.length) {
-      element.innerHTML = text.substring(0, i);
+document.querySelector("#scroll-down").onclick = scroll(true);
+document.querySelector("#scroll-up").onclick = scroll(false);
+
+function typewriter(querySelector, interval) {
+  return function () {
+    var element = document.querySelector(querySelector);
+    var text = element.innerHTML;
+    element.innerHTML = "";
+
+    var i = 0;
+    (function type() {
+      element.innerHTML += text[i];
       i++;
-      setTimeout(type, 250);
-    }
-  })();
-});
+      if (i < text.length) setTimeout(type, interval);
+    })();
+  };
+}
 
-document.getElementById("scroll").onclick = function () {
-  for (const element of document.body.children) {
-    if (element.offsetTop > window.scrollY) {
-      element.scrollIntoView();
-      break;
+function scroll(down) {
+  return function () {
+    var elements = document.querySelectorAll("header, section");
+    for (var element of down ? elements : Array.from(elements).reverse()) {
+      if (down ? element.offsetTop > scrollY : element.offsetTop < scrollY) {
+        element.scrollIntoView();
+        break;
+      }
     }
-  }
-};
+  };
+}
