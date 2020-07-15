@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;&family=Montserrat:wght@400;600&display=swap");
 
 :root {
   font-family: "Roboto", sans-serif;
@@ -53,7 +53,7 @@ h6 {
   margin: 1rem 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  line-height: 1.6;
+  letter-spacing: -0.125rem;
 }
 
 h1 {
@@ -121,7 +121,6 @@ button.dark,
   color: var(--mono-1);
   border-color: var(--mono-1);
 }
-
 button.dark:hover,
 .button.dark:hover {
   color: white;
@@ -175,7 +174,7 @@ button.green:hover,
   font-size: 7rem;
   font-weight: 400;
   letter-spacing: -0.25rem;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #landing h1:hover {
@@ -259,11 +258,23 @@ section {
 }
 
 #section2 #projects article {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   background: var(--mono-1);
   color: var(--base);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
+}
+
+#section2 #projects article::after {
+  content: "Click for further info";
+  margin-top: auto;
+  margin-bottom: -25px;
+  padding-top: 10px;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--mono-3);
 }
 
 #section2 #projects article:hover {

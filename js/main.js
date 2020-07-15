@@ -29,7 +29,6 @@ function scroll(down) {
           ? element.offsetTop > scrollY + OFFSET
           : element.offsetTop < scrollY - OFFSET
       ) {
-        console.log(element);
         element.scrollIntoView();
         break;
       }
