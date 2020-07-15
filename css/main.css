@@ -332,10 +332,13 @@ section {
   right: 1rem;
   margin: 1rem;
   overflow: hidden;
-  color: var(--mono-1);
-  mix-blend-mode: difference;
   cursor: pointer;
-  animation: scroll-color 1.5s infinite both ease-in-out;
+}
+
+#scroll path {
+  color: var(--mono-1);
+  stroke: var(--base);
+  stroke-width: 1rem;
 }
 
 @media (max-width: 500px) {
@@ -394,15 +397,5 @@ section {
   }
   50% {
     opacity: 0%;
-  }
-}
-
-@keyframes scroll-color {
-  0%,
-  100% {
-    color: var(--mono-1);
-  }
-  50% {
-    color: var(--mono-2);
   }
 }
