@@ -365,24 +365,33 @@ section {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 1;
   width: 100%;
   height: 100%;
+  z-index: 1;
   overflow: auto;
   background: rgba(0, 0, 0, 0.5);
+}
+
+#modals.show {
+  display: block;
+  animation: fade 0.25s forwards ease-in-out;
 }
 
 #modals article {
   display: none;
   background: var(--mono-1);
   color: var(--base);
-  width: 100%;
   max-width: 750px;
-  margin: 50px auto;
-  padding: 25px;
+  margin: 100px auto;
+  padding: 50px;
 }
 
-#modals .close {
+#modals article.show {
+  display: block;
+  animation: fade 0.25s forwards ease-in-out, pop 0.25s forwards ease;
+}
+
+#modals article .close {
   float: right;
   font-weight: bold;
   font-size: 2rem;
@@ -392,7 +401,26 @@ section {
 }
 
 #modals .close:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+@media (max-height: 600px) {
+  #modals article {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  #modals article {
+    margin: 50px 12.5px;
+    width: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  #modals article {
+    padding: 25px;
+  }
 }
 
 @keyframes title-cycle {
@@ -432,5 +460,23 @@ section {
   }
   50% {
     opacity: 0%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(-0.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }

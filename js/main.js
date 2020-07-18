@@ -13,13 +13,13 @@ const typewriter = (querySelector, interval) => () => {
 };
 
 const scroll = (down) => () => {
-  const SCROLL = 100;
+  const OFFSET = 100;
   const elements = document.querySelectorAll("header, section");
   for (const element of down ? elements : Array.from(elements).reverse()) {
     if (
       down
-        ? element.offsetTop > scrollY + SCROLL
-        : element.offsetTop < scrollY - SCROLL
+        ? element.offsetTop > scrollY + OFFSET
+        : element.offsetTop < scrollY - OFFSET
     ) {
       element.scrollIntoView();
       break;
@@ -28,18 +28,18 @@ const scroll = (down) => () => {
 };
 
 const modalOpen = (modalID) => () => {
-  document.querySelector("#modals").style.display = "block";
+  document.querySelector("#modals").classList.add("show");
   document
     .querySelectorAll(`#modals article`)
-    .forEach((element) => (element.style.display = "none"));
-  document.getElementById(modalID).style.display = "block";
+    .forEach((element) => element.classList.remove("show"));
+  document.getElementById(modalID).classList.add("show");
 };
 
 const modalClose = () => {
-  document.querySelector("#modals").style.display = "none";
+  document.querySelector("#modals").classList.remove("show");
   document
     .querySelectorAll(`#modals article`)
-    .forEach((element) => (element.style.display = "none"));
+    .forEach((element) => element.classList.remove("show"));
 };
 
 document.onload = window.onload = typewriter("#landing h1", 250);
@@ -56,3 +56,7 @@ document
 document
   .querySelectorAll("#modals .close")
   .forEach((element) => (element.onclick = modalClose));
+
+window.onclick = (event) => {
+  if (event.target == document.getElementById("modals")) modalClose();
+};
