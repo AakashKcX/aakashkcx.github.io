@@ -1,37 +1,58 @@
-// window.addEventListener("DOMContentLoaded", typewriter("#landing h1", 250));
+const typewriter = (querySelector, interval) => () => {
+  const element = document.querySelector(querySelector);
+  const text = element.innerHTML;
+  element.innerHTML = "";
+
+  let i = 0;
+  const type = () => {
+    element.innerHTML += text[i];
+    i++;
+    if (i < text.length) setTimeout(type, interval);
+  };
+  type();
+};
+
+const scroll = (down) => () => {
+  const SCROLL = 100;
+  const elements = document.querySelectorAll("header, section");
+  for (const element of down ? elements : Array.from(elements).reverse()) {
+    if (
+      down
+        ? element.offsetTop > scrollY + SCROLL
+        : element.offsetTop < scrollY - SCROLL
+    ) {
+      element.scrollIntoView();
+      break;
+    }
+  }
+};
+
+const modalOpen = (modalID) => () => {
+  document.querySelector("#modals").style.display = "block";
+  document
+    .querySelectorAll(`#modals article`)
+    .forEach((element) => (element.style.display = "none"));
+  document.getElementById(modalID).style.display = "block";
+};
+
+const modalClose = () => {
+  document.querySelector("#modals").style.display = "none";
+  document
+    .querySelectorAll(`#modals article`)
+    .forEach((element) => (element.style.display = "none"));
+};
+
 document.onload = window.onload = typewriter("#landing h1", 250);
 
 document.querySelector("#scroll-down").onclick = scroll(true);
 document.querySelector("#scroll-up").onclick = scroll(false);
 
-function typewriter(querySelector, interval) {
-  return function () {
-    var element = document.querySelector(querySelector);
-    var text = element.innerHTML;
-    element.innerHTML = "";
+document
+  .querySelectorAll("[href*=modal]")
+  .forEach(
+    (element) => (element.onclick = modalOpen(element.getAttribute("href")))
+  );
 
-    var i = 0;
-    (function type() {
-      element.innerHTML += text[i];
-      i++;
-      if (i < text.length) setTimeout(type, interval);
-    })();
-  };
-}
-
-function scroll(down) {
-  var OFFSET = 100;
-  return function () {
-    var elements = document.querySelectorAll("header, section");
-    for (var element of down ? elements : Array.from(elements).reverse()) {
-      if (
-        down
-          ? element.offsetTop > scrollY + OFFSET
-          : element.offsetTop < scrollY - OFFSET
-      ) {
-        element.scrollIntoView();
-        break;
-      }
-    }
-  };
-}
+document
+  .querySelectorAll("#modals .close")
+  .forEach((element) => (element.onclick = modalClose));
