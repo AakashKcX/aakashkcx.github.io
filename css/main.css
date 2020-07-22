@@ -314,13 +314,13 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 25px auto;
+  margin: 50px auto;
 }
 
 #footer #socials a {
   color: var(--mono-1);
+  margin: 0 1rem;
   line-height: 1;
-  margin: 25px 1rem;
   transition: transform 0.15s ease-in-out;
 }
 
@@ -335,6 +335,7 @@ section {
 #footer #info {
   display: flex;
   justify-content: space-between;
+  margin-top: 25px;
 }
 
 #footer #info a {
