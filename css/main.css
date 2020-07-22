@@ -97,12 +97,12 @@ button,
   line-height: 1;
   text-decoration: none !important;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: transform 0.15s ease-in-out, background 0.15s ease-in-out;
 }
 
 button:hover,
 .button:hover {
-  transform: scale(0.95);
+  transform: scale(1.05);
 }
 
 button.light,
@@ -259,7 +259,7 @@ section {
   background: var(--mono-1);
   color: var(--base);
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: transform 0.15s ease-in-out, background 0.15s ease-in-out;
 }
 
 #section2 #projects article::after {
@@ -274,7 +274,7 @@ section {
 
 #section2 #projects article:hover {
   background: var(--mono-2);
-  transform: scale(0.99);
+  transform: scale(0.975);
 }
 
 #section2 #projects article.red:hover {
