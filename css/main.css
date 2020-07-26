@@ -302,6 +302,7 @@ section {
 #section3 {
   background: var(--mono-1);
   color: var(--base);
+  font-size: 1.25rem;
 }
 
 #footer {
