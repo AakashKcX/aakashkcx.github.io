@@ -40,7 +40,9 @@ body {
   padding: 0 25px;
 }
 
-p {
+p,
+ul,
+ol {
   margin: 0.5rem 0;
 }
 
@@ -432,9 +434,9 @@ section {
 }
 
 #modals img {
-  border: solid var(--mono-3) 5px;
+  border: solid var(--mono-3) 3px;
   margin: 0.5rem 0;
-  transition: transform 0.15s ease-in-out;
+  transition: transform 0.05s ease-in-out;
 }
 
 @media (max-height: 600px) {
