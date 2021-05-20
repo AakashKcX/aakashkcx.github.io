@@ -188,6 +188,15 @@ button.green:hover,
   text-shadow: 0 0 1.75rem black;
 }
 
+#landing #landing-source {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  margin: 1rem;
+  font-size: 0.75rem;
+  border-width: 1px;
+}
+
 #landing h1 {
   font-size: 7rem;
   font-weight: 400;
